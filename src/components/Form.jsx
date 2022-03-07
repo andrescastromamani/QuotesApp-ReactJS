@@ -1,9 +1,9 @@
 import { useState } from "react"
 import { v4 as uuidv4 } from 'uuid';
 
-export const Form = () => {
+export const Form = ({ saveQuote }) => {
     const [quote, setQuote] = useState({
-        id: uuidv4(),
+        id: '',
         namePet: '',
         nameOwner: '',
         date: '',
@@ -25,7 +25,17 @@ export const Form = () => {
             return;
         }
         setError(false);
-        console.log(quote);
+        quote.id = uuidv4();
+        saveQuote(quote);
+        //reset form
+        setQuote({
+            id: uuidv4(),
+            namePet: '',
+            nameOwner: '',
+            date: '',
+            hour: '',
+            symptom: '',
+        })
     }
     return (
         <>
