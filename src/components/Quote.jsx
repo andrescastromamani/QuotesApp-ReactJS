@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 export const Quote = ({ quote, deleteQuote }) => {
     return (
@@ -17,4 +18,9 @@ export const Quote = ({ quote, deleteQuote }) => {
             >Delete</button>
         </div>
     )
+}
+
+Quote.propTypes = {
+    quote: PropTypes.object.isRequired,
+    deleteQuote: PropTypes.func.isRequired
 }

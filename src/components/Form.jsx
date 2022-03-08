@@ -1,5 +1,7 @@
-import { useState } from "react"
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
+
 
 export const Form = ({ saveQuote }) => {
     const [quote, setQuote] = useState({
@@ -103,4 +105,8 @@ export const Form = ({ saveQuote }) => {
             </form>
         </>
     )
+}
+
+Form.propTypes = {
+    saveQuote: PropTypes.func.isRequired
 }
